@@ -124,7 +124,7 @@ while place_order:
             menu_selection = input("Please select a menu item: ")
             
             # 3. Check if the customer typed a number
-            if menu_selection.digit():
+            if menu_selection.isdigit():
                 # Convert the menu selection to an integer
                 menu_selection = int(menu_selection)
 
@@ -143,7 +143,11 @@ while place_order:
                         selection_amount = int(selection_amount)
 
                     # Add the item name, price, and quantity to the order list
-
+                    customer_order.append({
+                          "item_name": item_name,
+                          "item_price": item_price,
+                          "item_quantity": item_quantity
+                                                        })
 
                     # Tell the customer that their input isn't valid
 
