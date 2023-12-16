@@ -52,7 +52,7 @@ menu = {
 
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
-
+customer_order = []
 
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
@@ -78,6 +78,8 @@ while place_order:
         # Add 1 to the menu item number
         i += 1
 
+
+
     # Get the customer's input
     menu_category = input("Type menu number: ")
 
@@ -89,6 +91,7 @@ while place_order:
             menu_category_name = menu_items[int(menu_category)]
             # Print out the menu category name they selected
             print(f"You selected {menu_category_name}")
+
 
             # Print out the menu options from the menu_category_name
             print(f"What {menu_category_name} item would you like to order?")
@@ -118,23 +121,26 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
-
-
+            menu_selection = input("Please select a menu item: ")
+            
             # 3. Check if the customer typed a number
-
+            if menu_selection.digit():
                 # Convert the menu selection to an integer
-
+                menu_selection = int(menu_selection)
 
                 # 4. Check if the menu selection is in the menu items
-
+                if menu_selection in menu_items.keys():
                     # Store the item name as a variable
-
+                    selection_item = menu_items[menu_selection]["Item name"]
 
                     # Ask the customer for the quantity of the menu item
-
+                    selection_amount = input(f"How many {selection_item} would you like? ")
 
                     # Check if the quantity is a number, default to 1 if not
-
+                    if not selection_amount.isdigit():
+                        selection_amount = 1
+                    else:
+                        selection_amount = int(selection_amount)
 
                     # Add the item name, price, and quantity to the order list
 
