@@ -187,8 +187,11 @@ while place_order:
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
 
+for item in order_list:
+    print(f"{item['Quantity']} - {item['Item name']}")
+
 # Uncomment the following line to check the structure of the order
-print(order_list)
+#print(order_list)
 
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
@@ -202,7 +205,7 @@ for item in order_list:
     item_name = item["Item name"]
 
     # 8. Calculate the number of spaces for formatted printing
-    num_item_spaces = 24 - len(item_name)
+    num_item_spaces = 50 - len(item_name)
 
     # 9. Create space strings
     item_spaces = " " * num_item_spaces
@@ -216,4 +219,4 @@ for item in order_list:
 print("----------------------------------------------")
 prices = [item["Price"] * item["Quantity"] for item in order_list]
 total = sum(prices)
-print(f"Total: ${total}")
+print(f"You total is: ${total}")
