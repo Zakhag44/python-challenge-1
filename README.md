@@ -2,7 +2,7 @@
 Interactive ordering system from a food truck menu
 
 ## Assignment file path
-python-challenge-1/M2_Assignment/
+python-challenge-1/M2_Assignment/menu_assignment.py
 
 ## TutoringCo
 A tutor was used through the first 6 tasks in the file. Additionally, Github
